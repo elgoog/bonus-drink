@@ -1,13 +1,14 @@
 class BonusDrink
+  REQUIRED_COUND_FOR_BONUS = 3
   def self.total_count_for(amount)
     my_bottle = amount
-    empty_bottle = 0
+    bottles_in_shop = 0
     while my_bottle != 0
       my_bottle -= 1
-      empty_bottle += 1
-      my_bottle += 1 if empty_bottle % 3 == 0
+      bottles_in_shop += 1
+      my_bottle += 1 if bottles_in_shop % REQUIRED_COUND_FOR_BONUS == 0
     end
-    empty_bottle
+    bottles_in_shop
   end
 end
 
